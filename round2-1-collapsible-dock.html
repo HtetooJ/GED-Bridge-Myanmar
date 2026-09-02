@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Round 2 A - Collapsible Dock</title>
+  <link rel="stylesheet" href="round2-shared.css">
+  <style>
+    .phone { background: #fff; }
+    .lesson-head {
+      padding: 12px 0 16px;
+      border-bottom: 1px solid rgba(220, 227, 238, .68);
+    }
+    .panel p:first-of-type {
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .quiet-break {
+      height: 1px;
+      background: rgba(220, 227, 238, .7);
+      margin: 22px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <header class="topbar">
+      <div class="progress-row">
+        <div class="progress"><span style="width: 70%"></span></div>
+        <span class="percent">70%</span>
+      </div>
+    </header>
+    <main>
+      <section class="lesson-head">
+        <span class="lesson-mini"><span class="dot"></span>Math lesson</span>
+        <h1>သင်္ချာတွက်ချက်မှုအစဉ် (Order of Operations)</h1>
+        <p class="intro">သင်္ချာပုစ္ဆာတစ်ခုကို ဖြေရှင်းရန် အောက်ပါအချက်များကို လိုက်နာရန် လိုအပ်သည်:</p>
+      </section>
+      <section class="rule-stack">
+        <p>ကွင်းစကွင်းပိတ် (Parentheses): ဦးစွာတွက်ချက်ပါ။</p>
+        <p>မြှောက်ခြင်းနှင့် စားခြင်း (Multiplication/Division): ဘယ်မှညာသို့ အစဉ်လိုက်လုပ်ဆောင်ပါ။</p>
+        <p>ပေါင်းခြင်းနှင့် နုတ်ခြင်း (Addition/Subtraction): နောက်ဆုံးတွင် ဘယ်မှညာသို့ အစဉ်လိုက် တွက်ချက်ပါ။</p>
+      </section>
+      <section class="video-shell">
+        <div class="video">
+          <iframe src="https://www.youtube-nocookie.com/embed/GiSpzFKI5_w?start=266&playsinline=1&rel=0&modestbranding=1" title="Order of Operations video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-fallback"><span>Video</span><a href="https://www.youtube.com/watch?v=GiSpzFKI5_w&t=266s">YouTube</a></div>
+      </section>
+      <nav class="tabs" aria-label="Lesson materials">
+        <button class="tab" aria-selected="true" data-panel="transcript-a">Myanmar Transcript</button>
+        <button class="tab" aria-selected="false" data-panel="resources-a">Resources</button>
+      </nav>
+      <section id="transcript-a" class="panel">
+        <h2>အဆင့်ဆင့် တွက်ချက်ပုံ:</h2>
+        <p>ညီမျှခြင်း: 8+5×4−(6+10/2)+44</p>
+        <div class="quiet-break"></div>
+        <p>၁။ ကွင်းစကွင်းပိတ်များကို ဦးစွာဖြေရှင်းပါ:</p>
+        <ul>
+          <li>ပထမကွင်း: (5×4)=20</li>
+          <li>ဒုတိယကွင်း: (6+10/2) ထဲတွင် စားခြင်းကို ပေါင်းခြင်းထက် ဦးစားပေး၍ 10/2=5 ရပြီး 6+5=11 ဖြစ်ပါသည်။</li>
+        </ul>
+        <p>၂။ ကျန်ရှိသော ပေါင်းခြင်း/နုတ်ခြင်းများကို အစဉ်လိုက်တွက်ပါ:</p>
+        <p>ယခုညီမျှခြင်းမှာ 8+20−11+44 ဖြစ်လာပါသည်။</p>
+        <ul>
+          <li>8+20=28</li>
+          <li>28−11=17</li>
+          <li>17+44=61</li>
+          <li>နောက်ဆုံးရလဒ်မှာ 61 ဖြစ်ပါသည်။</li>
+        </ul>
+      </section>
+      <section id="resources-a" class="panel" hidden>
+        <h2>အကူအညီ</h2>
+        <ul>
+          <li>ကွင်းစကွင်းပိတ်ထဲက အပိုင်းကို အရင်ရှင်းပါ။</li>
+          <li>မြှောက်ခြင်း၊ စားခြင်းကို ဘယ်မှညာသို့ လုပ်ပါ။</li>
+          <li>နောက်ဆုံးမှာ ပေါင်းခြင်း၊ နုတ်ခြင်းကို ဘယ်မှညာသို့ တွက်ပါ။</li>
+        </ul>
+      </section>
+    </main>
+    <section class="quiz-dock" data-collapsed-title="18+6×4−(14+16/4)+72/8" aria-label="Final quiz">
+      <div class="dock-head">
+        <div class="dock-title">နောက်ဆုံး မေးခွန်း</div>
+        <button class="dock-toggle" aria-expanded="true">Hide</button>
+      </div>
+      <div class="equation">18+6×4−(14+16/4)+72/8</div>
+      <div class="answer-row">
+        <input inputmode="numeric" placeholder="Answer" aria-label="Answer">
+        <button class="check">Check</button>
+      </div>
+      <div class="feedback" aria-live="polite"></div>
+    </section>
+  </div>
+  <script src="round2-shared.js"></script>
+</body>
+</html>

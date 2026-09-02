@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order of Operations Prototypes</title>
+  <style>
+    :root {
+      --accent: #0077ff;
+      --ink: #17171c;
+      --muted: #666b76;
+      --line: #d9dee8;
+      --surface: #f6f8fb;
+      --card: #ffffff;
+      font-family: "Myanmar Sangam MN", "Noto Sans Myanmar", "Padauk", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #f4f8ff 0%, #ffffff 46%);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      padding: 28px 18px;
+    }
+    main {
+      width: min(100%, 520px);
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 26px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    p {
+      margin: 0 0 22px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+    a {
+      display: grid;
+      gap: 8px;
+      padding: 18px;
+      min-height: 120px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .9);
+      color: inherit;
+      text-decoration: none;
+      box-shadow: 0 16px 34px rgba(0, 34, 90, .08);
+    }
+    strong { font-size: 17px; }
+    span { color: var(--muted); line-height: 1.55; font-size: 14px; }
+    .pill {
+      justify-self: start;
+      color: var(--accent);
+      font: 700 12px/1 system-ui, sans-serif;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>သင်္ချာ Lesson HTML Prototypes</h1>
+    <p>Accent color is #0077FF. Each prototype is mobile-first and includes the video, transcript/resources tabs, progress bar, and answer checking.</p>
+    <div class="grid">
+      <a href="prototype-1-coursera-clean.html">
+        <span class="pill">Variation 1</span>
+        <strong>Coursera Clean</strong>
+        <span>Quiet, course-like lesson page with a sticky top progress bar and familiar tabbed transcript area.</span>
+      </a>
+      <a href="prototype-2-friendly-cards.html">
+        <span class="pill">Variation 2</span>
+        <strong>Friendly Cards</strong>
+        <span>More youthful and approachable, with compact cards and clearer step markers for scanning.</span>
+      </a>
+      <a href="prototype-3-app-focused.html">
+        <span class="pill">Variation 3</span>
+        <strong>App Focused</strong>
+        <span>A denser app-style lesson shell with fixed progress, bottom action rhythm, and quiz emphasis.</span>
+      </a>
+      <a href="round2-1-collapsible-dock.html">
+        <span class="pill">Round 2 A</span>
+        <strong>Collapsible Dock</strong>
+        <span>Prototype 3 direction with a full quiz dock that collapses into a slim bottom answer bar.</span>
+      </a>
+      <a href="round2-2-study-feed.html">
+        <span class="pill">Round 2 B</span>
+        <strong>Study Feed</strong>
+        <span>Cleaner lesson feed, soft section spacing, and a lighter floating quiz surface.</span>
+      </a>
+      <a href="round2-3-focus-sheet.html">
+        <span class="pill">Round 2 C</span>
+        <strong>Focus Sheet</strong>
+        <span>Most app-like version, with the quiz as a bottom sheet that can tuck away while reading.</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

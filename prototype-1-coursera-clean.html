@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prototype 1 - Coursera Clean</title>
+  <style>
+    :root {
+      --accent: #0077ff;
+      --accent-soft: #eaf3ff;
+      --ink: #191920;
+      --muted: #626977;
+      --line: #d9dee8;
+      --surface: #f7f9fc;
+      --success: #107c41;
+      --danger: #bc2f32;
+      font-family: "Myanmar Sangam MN", "Noto Sans Myanmar", "Padauk", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+    .phone {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      min-height: 100vh;
+      background: #fff;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(10px);
+      padding: 14px 18px 12px;
+      border-bottom: 1px solid rgba(217, 222, 232, .7);
+    }
+    .progress {
+      height: 8px;
+      border-radius: 999px;
+      background: #d7e0eb;
+      overflow: hidden;
+    }
+    .progress span { display: block; width: 48%; height: 100%; border-radius: inherit; background: var(--accent); }
+    main { padding: 28px 22px 34px; }
+    h1 {
+      margin: 0 0 22px;
+      font-size: 22px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+    h2 {
+      margin: 28px 0 12px;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+    p, li {
+      line-height: 1.8;
+      color: #2f3238;
+    }
+    ol, ul {
+      padding-left: 24px;
+      margin: 0;
+    }
+    li + li { margin-top: 12px; }
+    .intro {
+      color: #3d424b;
+      margin: 0 0 16px;
+    }
+    .video {
+      margin: 34px 0 0;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 18px 0 26px;
+      border-bottom: 1px solid #cfd5df;
+    }
+    .tab {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      padding: 14px 8px;
+      color: #50535c;
+      font: 700 15px/1.35 system-ui, sans-serif;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+    }
+    .tab[aria-selected="true"] {
+      color: var(--ink);
+      border-color: var(--accent);
+    }
+    .panel[hidden] { display: none; }
+    .panel { padding-bottom: 10px; }
+    .quiz {
+      margin-top: 34px;
+      padding: 18px;
+      border-radius: 8px;
+      background: var(--surface);
+      border: 1px solid #edf0f5;
+    }
+    .equation {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      font: 500 25px/1.35 "Inter", "Roboto", system-ui, sans-serif;
+      word-break: break-word;
+    }
+    .answer-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      margin-top: 16px;
+      align-items: center;
+    }
+    input {
+      width: 100%;
+      min-height: 58px;
+      border: 2px solid #a8adb5;
+      border-radius: 8px;
+      padding: 0 16px;
+      font: 600 21px/1 system-ui, sans-serif;
+      text-align: center;
+      outline: none;
+    }
+    input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+    .check {
+      min-height: 58px;
+      border: 0;
+      border-radius: 8px;
+      padding: 0 22px;
+      color: white;
+      background: #26242b;
+      font: 800 16px/1 system-ui, sans-serif;
+      cursor: pointer;
+    }
+    .feedback {
+      min-height: 34px;
+      margin-top: 12px;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+    .feedback.ok { color: var(--success); }
+    .feedback.no { color: var(--danger); }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <header class="topbar" aria-label="Lesson progress">
+      <div class="progress"><span></span></div>
+    </header>
+    <main>
+      <h1>သင်္ချာတွက်ချက်မှုအစဉ် (Order of Operations)</h1>
+      <p class="intro">သင်္ချာပုစ္ဆာတစ်ခုကို ဖြေရှင်းရန် အောက်ပါအချက်များကို လိုက်နာရန် လိုအပ်သည်:</p>
+      <ol>
+        <li>ကွင်းစကွင်းပိတ် (Parentheses): ဦးစွာတွက်ချက်ပါ။</li>
+        <li>မြှောက်ခြင်းနှင့် စားခြင်း (Multiplication/Division): ဘယ်မှညာသို့ အစဉ်လိုက်လုပ်ဆောင်ပါ။</li>
+        <li>ပေါင်းခြင်းနှင့် နုတ်ခြင်း (Addition/Subtraction): နောက်ဆုံးတွင် ဘယ်မှညာသို့ အစဉ်လိုက် တွက်ချက်ပါ။</li>
+      </ol>
+
+      <section class="video" aria-label="Lesson video">
+        <iframe src="https://www.youtube.com/embed/GiSpzFKI5_w?start=266" title="Order of Operations video" allowfullscreen></iframe>
+      </section>
+
+      <nav class="tabs" aria-label="Lesson materials">
+        <button class="tab" aria-selected="true" data-panel="transcript">Myanmar Transcript</button>
+        <button class="tab" aria-selected="false" data-panel="resources">Resources</button>
+      </nav>
+
+      <section id="transcript" class="panel">
+        <h2>အဆင့်ဆင့် တွက်ချက်ပုံ:</h2>
+        <p>ညီမျှခြင်း: 8+5×4−(6+10/2)+44</p>
+        <p>၁။ ကွင်းစကွင်းပိတ်များကို ဦးစွာဖြေရှင်းပါ:</p>
+        <ul>
+          <li>ပထမကွင်း: (5×4)=20</li>
+          <li>ဒုတိယကွင်း: (6+10/2) ထဲတွင် စားခြင်းကို ပေါင်းခြင်းထက် ဦးစားပေး၍ 10/2=5 ရပြီး 6+5=11 ဖြစ်ပါသည်။</li>
+        </ul>
+        <p>၂။ ကျန်ရှိသော ပေါင်းခြင်း/နုတ်ခြင်းများကို အစဉ်လိုက်တွက်ပါ:</p>
+        <p>ယခုညီမျှခြင်းမှာ 8+20−11+44 ဖြစ်လာပါသည်။</p>
+        <ul>
+          <li>8+20=28</li>
+          <li>28−11=17</li>
+          <li>17+44=61</li>
+          <li>နောက်ဆုံးရလဒ်မှာ 61 ဖြစ်ပါသည်။</li>
+        </ul>
+      </section>
+
+      <section id="resources" class="panel" hidden>
+        <h2>မှတ်ထားရန်</h2>
+        <ul>
+          <li>ကွင်းစကွင်းပိတ်ထဲက အပိုင်းကို အရင်ရှင်းပါ။</li>
+          <li>မြှောက်ခြင်း၊ စားခြင်းကို ဘယ်မှညာသို့ လုပ်ပါ။</li>
+          <li>နောက်ဆုံးမှာ ပေါင်းခြင်း၊ နုတ်ခြင်းကို ဘယ်မှညာသို့ တွက်ပါ။</li>
+        </ul>
+      </section>
+
+      <section class="quiz" aria-label="Final quiz">
+        <div class="equation">18+6×4−(14+16/4)+72/8</div>
+        <div class="answer-row">
+          <input inputmode="numeric" aria-label="Answer" placeholder="Answer">
+          <button class="check">Check</button>
+        </div>
+        <div class="feedback" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((item) => item.setAttribute("aria-selected", "false"));
+        tab.setAttribute("aria-selected", "true");
+        document.querySelectorAll(".panel").forEach((panel) => panel.hidden = panel.id !== tab.dataset.panel);
+      });
+    });
+    document.querySelector(".check").addEventListener("click", () => {
+      const input = document.querySelector("input");
+      const feedback = document.querySelector(".feedback");
+      const value = Number(input.value.trim());
+      feedback.className = "feedback";
+      if (!input.value.trim()) {
+        feedback.textContent = "အဖြေထည့်ပြီးမှ စစ်ကြည့်ပါ။";
+        feedback.classList.add("no");
+      } else if (value === 33) {
+        feedback.textContent = "မှန်ပါတယ်။ နောက်ဆုံးရလဒ်က 33 ဖြစ်ပါတယ်။";
+        feedback.classList.add("ok");
+      } else {
+        feedback.textContent = "မမှန်သေးပါ။ ကွင်းစကွင်းပိတ်နဲ့ မြှောက်/စားခြင်းကို အရင်တွက်ကြည့်ပါ။";
+        feedback.classList.add("no");
+      }
+    });
+  </script>
+</body>
+</html>

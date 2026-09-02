@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Round 2 C - Focus Sheet</title>
+  <link rel="stylesheet" href="round2-shared.css">
+  <style>
+    body { background: #ecf2f8; }
+    .phone { background: #fbfcfe; }
+    .topbar {
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(220, 227, 238, .6);
+    }
+    .lesson-head {
+      padding: 14px 0 18px;
+    }
+    .lesson-head h1 {
+      margin-bottom: 14px;
+    }
+    .rule-stack {
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .rule-stack p::before {
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+    }
+    .video-shell {
+      margin-top: 18px;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+    }
+    .tabs {
+      top: 42px;
+      margin-bottom: 22px;
+      box-shadow: 0 10px 18px rgba(27, 43, 61, .04);
+    }
+    .panel {
+      padding-bottom: 24px;
+    }
+    .panel p {
+      margin: 10px 0;
+    }
+    .quiz-dock {
+      border-radius: 8px 8px 0 0;
+      padding-top: 10px;
+    }
+    .quiz-dock::before {
+      content: "";
+      display: block;
+      width: 42px;
+      height: 4px;
+      margin: 0 auto 10px;
+      border-radius: 999px;
+      background: #c8d0dc;
+    }
+    .dock-title {
+      color: var(--accent);
+    }
+    .equation {
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    .check { background: #1f2937; }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <header class="topbar">
+      <div class="progress-row">
+        <div class="progress"><span style="width: 68%"></span></div>
+        <span class="percent">68%</span>
+      </div>
+    </header>
+    <main>
+      <section class="lesson-head">
+        <span class="lesson-mini"><span class="dot"></span>GED Math</span>
+        <h1>သင်္ချာတွက်ချက်မှုအစဉ် (Order of Operations)</h1>
+        <p class="intro">သင်္ချာပုစ္ဆာတစ်ခုကို ဖြေရှင်းရန် အောက်ပါအချက်များကို လိုက်နာရန် လိုအပ်သည်:</p>
+      </section>
+      <section class="rule-stack">
+        <p>ကွင်းစကွင်းပိတ် (Parentheses): ဦးစွာတွက်ချက်ပါ။</p>
+        <p>မြှောက်ခြင်းနှင့် စားခြင်း (Multiplication/Division): ဘယ်မှညာသို့ အစဉ်လိုက်လုပ်ဆောင်ပါ။</p>
+        <p>ပေါင်းခြင်းနှင့် နုတ်ခြင်း (Addition/Subtraction): နောက်ဆုံးတွင် ဘယ်မှညာသို့ အစဉ်လိုက် တွက်ချက်ပါ။</p>
+      </section>
+      <section class="video-shell">
+        <div class="video">
+          <iframe src="https://www.youtube-nocookie.com/embed/GiSpzFKI5_w?start=266&playsinline=1&rel=0&modestbranding=1" title="Order of Operations video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-fallback"><span>Video</span><a href="https://www.youtube.com/watch?v=GiSpzFKI5_w&t=266s">YouTube</a></div>
+      </section>
+      <nav class="tabs" aria-label="Lesson materials">
+        <button class="tab" aria-selected="true" data-panel="transcript-c">Myanmar Transcript</button>
+        <button class="tab" aria-selected="false" data-panel="resources-c">Resources</button>
+      </nav>
+      <section id="transcript-c" class="panel">
+        <h2>အဆင့်ဆင့် တွက်ချက်ပုံ:</h2>
+        <p>ညီမျှခြင်း: 8+5×4−(6+10/2)+44</p>
+        <p>၁။ ကွင်းစကွင်းပိတ်များကို ဦးစွာဖြေရှင်းပါ:</p>
+        <ul>
+          <li>ပထမကွင်း: (5×4)=20</li>
+          <li>ဒုတိယကွင်း: (6+10/2) ထဲတွင် စားခြင်းကို ပေါင်းခြင်းထက် ဦးစားပေး၍ 10/2=5 ရပြီး 6+5=11 ဖြစ်ပါသည်။</li>
+        </ul>
+        <p>၂။ ကျန်ရှိသော ပေါင်းခြင်း/နုတ်ခြင်းများကို အစဉ်လိုက်တွက်ပါ:</p>
+        <p>ယခုညီမျှခြင်းမှာ 8+20−11+44 ဖြစ်လာပါသည်။</p>
+        <ul>
+          <li>8+20=28</li>
+          <li>28−11=17</li>
+          <li>17+44=61</li>
+          <li>နောက်ဆုံးရလဒ်မှာ 61 ဖြစ်ပါသည်။</li>
+        </ul>
+      </section>
+      <section id="resources-c" class="panel" hidden>
+        <h2>အကူအညီ</h2>
+        <ul>
+          <li>မြှောက်ခြင်းနဲ့ စားခြင်းကို အရင်ရှင်းပါ။</li>
+          <li>ကိန်းစဉ်ပြောင်းသွားတိုင်း အဆင့်အသစ်အနေနဲ့ ရေးပါ။</li>
+          <li>အဖြေ 33 ရမရ ကိုယ်တိုင်တစ်ဆင့်ချင်းစစ်ပါ။</li>
+        </ul>
+      </section>
+    </main>
+    <section class="quiz-dock" data-collapsed-title="Final: 18+6×4−(14+16/4)+72/8" aria-label="Final quiz">
+      <div class="dock-head">
+        <div class="dock-title">နောက်ဆုံး မေးခွန်း</div>
+        <button class="dock-toggle" aria-expanded="true">Hide</button>
+      </div>
+      <div class="equation">18+6×4−(14+16/4)+72/8</div>
+      <div class="answer-row">
+        <input inputmode="numeric" placeholder="Answer" aria-label="Answer">
+        <button class="check">Check</button>
+      </div>
+      <div class="feedback" aria-live="polite"></div>
+    </section>
+  </div>
+  <script src="round2-shared.js"></script>
+</body>
+</html>

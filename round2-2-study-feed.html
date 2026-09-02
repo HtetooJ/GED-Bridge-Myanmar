@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Round 2 B - Study Feed</title>
+  <link rel="stylesheet" href="round2-shared.css">
+  <style>
+    body { background: #f6f9fc; }
+    .topbar {
+      border-bottom: 0;
+      box-shadow: 0 8px 22px rgba(20, 38, 58, .05);
+    }
+    .lesson-head {
+      padding: 14px 0 18px;
+    }
+    .lesson-head h1 { margin-bottom: 14px; }
+    .rule-stack {
+      gap: 16px;
+      padding: 2px 0 10px;
+      border-bottom: 1px solid rgba(220, 227, 238, .72);
+    }
+    .rule-stack p {
+      min-height: 58px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .rule-stack p::before {
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+    }
+    .video-shell {
+      margin-top: 24px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #111827;
+    }
+    .video-shell .video {
+      display: block;
+    }
+    .tabs {
+      top: 44px;
+      margin-top: 18px;
+      border-bottom: 1px solid rgba(220, 227, 238, .9);
+    }
+    .panel {
+      padding-top: 8px;
+    }
+    .step {
+      margin: 16px 0;
+      padding-left: 14px;
+      border-left: 4px solid var(--accent);
+    }
+    .step p {
+      margin: 0 0 8px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .quiz-dock {
+      bottom: max(10px, env(safe-area-inset-bottom));
+      margin: 0;
+      width: min(calc(100% - 20px), 410px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 -8px 26px rgba(28, 42, 62, .12);
+    }
+    .quiz-inline {
+      box-shadow: none;
+    }
+    .check { background: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <header class="topbar">
+      <div class="progress-row">
+        <div class="progress"><span style="width: 74%"></span></div>
+        <span class="percent">74%</span>
+      </div>
+    </header>
+    <main>
+      <section class="lesson-head">
+        <span class="lesson-mini"><span class="dot"></span>GED Math</span>
+        <h1>သင်္ချာတွက်ချက်မှုအစဉ် (Order of Operations)</h1>
+        <p class="intro">သင်္ချာပုစ္ဆာတစ်ခုကို ဖြေရှင်းရန် အောက်ပါအချက်များကို လိုက်နာရန် လိုအပ်သည်:</p>
+      </section>
+      <section class="rule-stack">
+        <p>ကွင်းစကွင်းပိတ် (Parentheses): ဦးစွာတွက်ချက်ပါ။</p>
+        <p>မြှောက်ခြင်းနှင့် စားခြင်း (Multiplication/Division): ဘယ်မှညာသို့ အစဉ်လိုက်လုပ်ဆောင်ပါ။</p>
+        <p>ပေါင်းခြင်းနှင့် နုတ်ခြင်း (Addition/Subtraction): နောက်ဆုံးတွင် ဘယ်မှညာသို့ အစဉ်လိုက် တွက်ချက်ပါ။</p>
+      </section>
+      <section class="video-shell">
+        <div class="video">
+          <iframe src="https://www.youtube-nocookie.com/embed/GiSpzFKI5_w?playsinline=1&rel=0&modestbranding=1" title="Order of Operations video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </section>
+      <nav class="tabs" aria-label="Lesson materials">
+        <button class="tab" aria-selected="true" data-panel="transcript-b">Myanmar Explanation</button>
+        <button class="tab" aria-selected="false" data-panel="resources-b">Resources</button>
+      </nav>
+      <section id="transcript-b" class="panel">
+        <h2>အဆင့်ဆင့် တွက်ချက်ပုံ:</h2>
+        <p>ညီမျှခြင်း: 8+5×4−(6+10/2)+44</p>
+        <div class="step">
+          <p>၁။ ကွင်းစကွင်းပိတ်များ</p>
+          <ul>
+            <li>ပထမကွင်း: (5×4)=20</li>
+            <li>ဒုတိယကွင်း: (6+10/2) ထဲတွင် စားခြင်းကို ပေါင်းခြင်းထက် ဦးစားပေး၍ 10/2=5 ရပြီး 6+5=11 ဖြစ်ပါသည်။</li>
+          </ul>
+        </div>
+        <div class="step">
+          <p>၂။ ကျန်ရှိသော ပေါင်းခြင်း/နုတ်ခြင်းများ</p>
+          <p>ယခုညီမျှခြင်းမှာ 8+20−11+44 ဖြစ်လာပါသည်။</p>
+          <ul>
+            <li>8+20=28</li>
+            <li>28−11=17</li>
+            <li>17+44=61</li>
+            <li>နောက်ဆုံးရလဒ်မှာ 61 ဖြစ်ပါသည်။</li>
+          </ul>
+        </div>
+      </section>
+      <section id="resources-b" class="panel" hidden>
+        <h2>အကူအညီ</h2>
+        <ul>
+          <li>မြှောက်ခြင်းနဲ့ စားခြင်းကို အရင်ရှင်းပါ။</li>
+          <li>ကိန်းစဉ်ပြောင်းသွားတိုင်း အဆင့်အသစ်အနေနဲ့ ရေးပါ။</li>
+          <li>အဖြေ 33 ရမရ ကိုယ်တိုင်တစ်ဆင့်ချင်းစစ်ပါ။</li>
+        </ul>
+      </section>
+      <section class="quiz-inline" data-inline-quiz aria-label="Final quiz at lesson end">
+        <div class="dock-head">
+          <div class="dock-title">Solve Now</div>
+        </div>
+        <div class="equation">18+6×4−(14+16/4)+72/8</div>
+        <div class="answer-row">
+          <input inputmode="numeric" placeholder="Answer" aria-label="Answer">
+          <button class="check">Check</button>
+        </div>
+        <div class="feedback" aria-live="polite"></div>
+      </section>
+    </main>
+    <section class="quiz-dock" data-float-quiz data-collapsed-title="Solve: 18+6×4−(14+16/4)+72/8" aria-label="Floating final quiz">
+      <div class="dock-head">
+        <div class="dock-title">Solve Now</div>
+        <button class="dock-toggle" aria-expanded="true">Hide</button>
+      </div>
+      <div class="equation">18+6×4−(14+16/4)+72/8</div>
+      <div class="answer-row">
+        <input inputmode="numeric" placeholder="Answer" aria-label="Answer">
+        <button class="check">Check</button>
+      </div>
+      <div class="feedback" aria-live="polite"></div>
+    </section>
+  </div>
+  <script src="round2-shared.js"></script>
+</body>
+</html>
